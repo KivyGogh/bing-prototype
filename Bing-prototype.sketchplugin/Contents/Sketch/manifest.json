@@ -1,0 +1,39 @@
+{
+  "name": "Bing prototype",
+  "description": "Generates a HTML clickable prototype",
+  "author" : "蛋哥",
+  "homepage": "https://github.com/kivygogh/bing-prototype",  
+  "identifier" : "com.cloudblue.sketch.bing-prototype",
+  "appcast": "https://raw.githubusercontent.com/MaxBazarov/exporter/master/appcast.xml",
+  "compatibleVersion": 1,
+  "bundleVersion": 1,
+  "version" : "1.0",
+  "icon": "icon.png",
+  "commands" : [   
+    {
+      "script" : "cmdline-functions.js",
+      "handler" : "cmdRun",
+      "name" : "Run from command line",
+      "identifier" : "cmdRun"
+    },   
+    {
+      "script" : "menu-export-html-adv.js",
+      "handler" : "onRun",
+      "name" : "Export selected to HTML",
+      "identifier" : "exportToHTMLAdv"
+    },
+    {
+      "script" : "menu-export-html.js",
+      "handler" : "onRun",
+      "name" : "Export to HTML",
+      "identifier" : "exportToHTML"
+    }
+  ],
+  "menu": {
+    "title": "👀 Bing prototype",
+    "items": [
+      "exportToHTML",      
+      "exportToHTMLAdv",      
+    ]
+  }
+}
