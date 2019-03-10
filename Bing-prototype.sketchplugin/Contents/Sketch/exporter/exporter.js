@@ -333,15 +333,7 @@ class Exporter {
     log(" exportImages: done!")
   }
 
-  buildPreviews(){
-    log(" buildPreviews: running...")
-    const pub = new Publisher(this.context,this.ndoc);    
-    pub.copyScript("resize.sh")
-    const res = pub.runScriptWithArgs("resize.sh",[this.imagesPath])
-    log(" buildPreviews: done!")
-    if(!res.result) pub.showOutput(res)    
-  }
-
+  
   createViewerFile(fileName){
     return this.prepareFilePath(this._outputPath + "/" + Constants.VIEWER_DIRECTORY,fileName);
   }
@@ -418,9 +410,6 @@ class Exporter {
     this.exportArtboardImagesAndDef()
     
     if(!this.generateJSStoryEnd()) return false
- 
-    // Build image small previews for Gallery
-    this.buildPreviews()
 
     // Dump document layers to JSON file
     this.saveToJSON()
